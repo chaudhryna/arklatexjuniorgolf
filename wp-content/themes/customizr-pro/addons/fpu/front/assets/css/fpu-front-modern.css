@@ -1,0 +1,708 @@
+/*! Featured Pages Unlimited Front Style by Nicolas Guillaume, GPL2+ licensed */
+
+/*
+* Following a custom version of the bootstrap 4 grid system
+* it doesn't include the pull/push stuff, as we don't use them for FPU
+* Also for fpu we can have at maximum 4fp per line so we are interested only in:
+* col-[md]-{3,4,6,12}
+* we'll see with the time if we need to add other breakpoints than md
+*/
+[class*=fpc-],
+[class*=fpc-]::before,
+[class*=fpc-]::after {
+          box-sizing: border-box;
+}
+/* Responsive ratios */
+[class*=czr__r-w] {
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+[class*=czr__r-w]::before {
+  display: block;
+  content: "";
+}
+
+
+/* Various responsive ratios */
+.czr__r-wFP::before {
+  padding-top: 92.592593%; /* default fp aspect ratio */
+}
+/* Equivalent of the bootstrap .container-fluid */
+.fpc-container {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Equivalent of the bootstrap .row */
+.fpc-row-fluid{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Equivalent of the bootstrap fpc-col-X */
+.fpc-col-3, .fpc-col-4, .fpc-col-6, .fpc-col-12, .col, .fpc-col-md-3, .fpc-col-md-4, .fpc-col-md-6, .fpc-col-md-12, .fpc-col-md {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.fpc-col {
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100%;
+}
+
+.fpc.col-auto {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: auto;
+}
+
+
+.fpc-col-3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.fpc-col-4 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333333%;
+          flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.fpc-col-6 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.fpc-col-12 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .fpc-col-md {
+    -webkit-flex-basis: 0;
+            flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 100%;
+  }
+  .fpc-col-md-auto {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: auto;
+  }
+  .fpc-col-md-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .fpc-col-md-4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .fpc-col-md-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .fpc-col-md-12 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+/* End grid system */
+
+
+.fpc-widget-front {
+  text-align: center;
+  margin: auto!important
+}
+.fpc-marketing .fpc-widget-front h2 {
+  font-size: 1.6em;
+  margin: 10px 0;
+  font-weight: 700;
+  line-height: 1.55em;
+  text-shadow: 0 1px 0 #FFF;
+  text-align: center
+}
+.fpc-widget-front>p {
+  line-height: 1.55em;
+}
+.fpc-widget-front>p>a {
+  padding: 0!important;
+  display: inline!important;
+  line-height: 1em!important;
+}
+
+
+/* JS IMAGE CENTERING */
+.fpc-widget-front img.h-centered {
+  width: auto!important;
+  max-width: none!important;
+  position: relative;
+}
+.fpc-widget-front img.v-centered {
+  height: auto!important;
+  max-height: none!important;
+  max-width: none!important;
+  vertical-align: top;
+  position: relative;
+}
+
+.czr-link-mask.no-effect {
+  border: none
+}
+.no-cssanimations .czr-link-mask {
+  border: transparent;
+}
+.no-cssanimations .fp-thumb-wrapper {
+  opacity: .7
+}
+.no-cssanimations .fp-thumb-wrapper:hover {
+  opacity: 1
+}
+
+.fpc-container .fpc-edit-link {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  z-index: 100
+}
+
+/*
+* Buttons
+*/
+.fpc-container .fpc-btn {
+  display: inline-block!important;
+  padding: 1px 5px!important;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5em!important;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  text-decoration: none;
+  background-color: #F5F5F5;
+  background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#FFF),to(#E6E6E6));
+  background-image: -webkit-linear-gradient(top,#FFF,#E6E6E6);
+  background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+  background-image: linear-gradient(to bottom,#FFF,#E6E6E6);
+  background-repeat: repeat-x;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.05)
+}
+.fpc-container .fpc-btn-inverse {
+  color: #FFF;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #363636;
+  background-image: -moz-linear-gradient(top,#444,#222);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#444),to(#222));
+  background-image: -webkit-linear-gradient(top,#444,#222);
+  background-image: -o-linear-gradient(top,#444,#222);
+  background-image: linear-gradient(to bottom,#444,#222);
+  background-repeat: repeat-x;
+  border-color: #222 #222 #000;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-container .fpc-btn-inverse.active,.fpc-container .fpc-btn-inverse:active,.fpc-container .fpc-btn-inverse:focus,.fpc-container .fpc-btn-inverse:hover {
+  color: #FFF;
+  background-color: #222
+}
+.fpc-widget-front .fp-excerpt.fpc-hide,.fpc-widget-front .fp-title.fpc-hide,.fpc-widget-front .fp-button.fpc-hide,.fpc-widget-front .fp-thumb-wrapper.fpc-hide {
+  display: none!important
+}
+.fpc-widget-front .btn:not(.btn-more) {
+  padding: 4px 12px!important;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.fpc-widget-front .fpc-btn {
+  display: inline-block!important;
+  *display: inline!important;
+  *zoom: 1;
+  padding: 4px 12px!important;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5em!important;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  text-decoration: none;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+  background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+  background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+  background-repeat: repeat-x;
+  *background-color: #e6e6e6;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+  border: 1px solid #ccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  border-radius: 4px;
+  *margin-left: .3em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.05)
+}
+.fpc-widget-front .fpc-btn.active,.fpc-widget-front .fpc-btn.disabled,.fpc-widget-front .fpc-btn:active,.fpc-widget-front .fpc-btn:focus,.fpc-widget-front .fpc-btn:hover,.fpc-widget-front .fpc-btn[disabled] {
+  color: #333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9
+}
+.fpc-widget-front .fpc-btn:first-child {
+  *margin-left: 0
+}
+.fpc-widget-front .fpc-btn:focus,.fpc-widget-front .fpc-btn:hover {
+  color: #333;
+  text-decoration: none;
+  background-position: 0 -15px;
+  transition: background-position .1s linear
+}
+.fpc-widget-front .fpc-btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px
+}
+.fpc-widget-front .fpc-btn.active,.fpc-widget-front .fpc-btn:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05)
+}
+.fpc-widget-front .fpc-btn-primary.green {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #8DA65A;
+  background-image: -moz-linear-gradient(top,#9db668,#768d44);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#9DB668),to(#768D44));
+  background-image: -webkit-linear-gradient(top,#9DB668,#768D44);
+  background-image: -o-linear-gradient(top,#9db668,#768d44);
+  background-image: linear-gradient(to bottom,#9DB668,#768D44);
+  background-repeat: repeat-x;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.green.active,.fpc-widget-front .fpc-btn-primary.green.disabled,.fpc-widget-front .fpc-btn-primary.green:active,.fpc-widget-front .fpc-btn-primary.green:focus,.fpc-widget-front .fpc-btn-primary.green:hover,.fpc-widget-front .fpc-btn-primary.green[disabled] {
+  color: #fff;
+  background-color: #768d44;
+  *background-color: #687c3c
+}
+.fpc-widget-front .fpc-btn-primary.blue {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #0074ad;
+  background-image: -moz-linear-gradient(top,#08c,#005580);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#005580));
+  background-image: -webkit-linear-gradient(top,#08c,#005580);
+  background-image: -o-linear-gradient(top,#08c,#005580);
+  background-image: linear-gradient(to bottom,#08c,#005580);
+  background-repeat: repeat-x;
+  border-color: #005580 #005580 #023;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #005580;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.blue.active,.fpc-widget-front .fpc-btn-primary.blue.disabled,.fpc-widget-front .fpc-btn-primary.blue:active,.fpc-widget-front .fpc-btn-primary.blue:focus,.fpc-widget-front .fpc-btn-primary.blue:hover,.fpc-widget-front .fpc-btn-primary.blue[disabled] {
+  color: #fff;
+  background-color: #005580;
+  *background-color: #046
+}
+.fpc-widget-front .fpc-btn-primary.black {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #000;
+  background-image: -moz-linear-gradient(top,#000,#000);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#000),to(#000));
+  background-image: -webkit-linear-gradient(top,#000,#000);
+  background-image: -o-linear-gradient(top,#000,#000);
+  background-image: linear-gradient(to bottom,#000,#000);
+  background-repeat: repeat-x;
+  border-color: #000 black;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #000;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.black.active,.fpc-widget-front .fpc-btn-primary.black.disabled,.fpc-widget-front .fpc-btn-primary.black:active,.fpc-widget-front .fpc-btn-primary.black:focus,.fpc-widget-front .fpc-btn-primary.black:hover,.fpc-widget-front .fpc-btn-primary.black[disabled] {
+  color: #fff;
+  background-color: #000;
+  *background-color: #000
+}
+.fpc-widget-front .fpc-btn-primary.grey {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #4b4b4b;
+  background-image: -moz-linear-gradient(top,#5a5a5a,#343434);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#5a5a5a),to(#343434));
+  background-image: -webkit-linear-gradient(top,#5a5a5a,#343434);
+  background-image: -o-linear-gradient(top,#5a5a5a,#343434);
+  background-image: linear-gradient(to bottom,#5a5a5a,#343434);
+  background-repeat: repeat-x;
+  border-color: #343434 #343434 #0e0e0e;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #343434;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.grey.active,.fpc-widget-front .fpc-btn-primary.grey.disabled,.fpc-widget-front .fpc-btn-primary.grey:active,.fpc-widget-front .fpc-btn-primary.grey:focus,.fpc-widget-front .fpc-btn-primary.grey:hover,.fpc-widget-front .fpc-btn-primary.grey[disabled] {
+  color: #fff;
+  background-color: #343434;
+  *background-color: #272727
+}
+.fpc-widget-front .fpc-btn-primary.orange {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #ee7c2a;
+  background-image: -moz-linear-gradient(top,#f78c40,#e16309);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#f78c40),to(#e16309));
+  background-image: -webkit-linear-gradient(top,#f78c40,#e16309);
+  background-image: -o-linear-gradient(top,#f78c40,#e16309);
+  background-image: linear-gradient(to bottom,#f78c40,#e16309);
+  background-repeat: repeat-x;
+  border-color: #e16309 #e16309 #984306;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #e16309;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.orange.active,.fpc-widget-front .fpc-btn-primary.orange.disabled,.fpc-widget-front .fpc-btn-primary.orange:active,.fpc-widget-front .fpc-btn-primary.orange:focus,.fpc-widget-front .fpc-btn-primary.orange:hover,.fpc-widget-front .fpc-btn-primary.orange[disabled] {
+  color: #fff;
+  background-color: #e16309;
+  *background-color: #c95808
+}
+.fpc-widget-front .fpc-btn-primary.purple {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #e165ab;
+  background-image: -moz-linear-gradient(top,#e67fb9,#da3f96);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#e67fb9),to(#da3f96));
+  background-image: -webkit-linear-gradient(top,#e67fb9,#da3f96);
+  background-image: -o-linear-gradient(top,#e67fb9,#da3f96);
+  background-image: linear-gradient(to bottom,#e67fb9,#da3f96);
+  background-repeat: repeat-x;
+  border-color: #da3f96 #da3f96 #ab216f;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #da3f96;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.purple.active,.fpc-widget-front .fpc-btn-primary.purple.disabled,.fpc-widget-front .fpc-btn-primary.purple:active,.fpc-widget-front .fpc-btn-primary.purple:focus,.fpc-widget-front .fpc-btn-primary.purple:hover,.fpc-widget-front .fpc-btn-primary.purple[disabled] {
+  color: #fff;
+  background-color: #da3f96;
+  *background-color: #d52a8a
+}
+.fpc-widget-front .fpc-btn-primary.red {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #c30606;
+  background-image: -moz-linear-gradient(top,#e10707,#970505);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#e10707),to(#970505));
+  background-image: -webkit-linear-gradient(top,#e10707,#970505);
+  background-image: -o-linear-gradient(top,#e10707,#970505);
+  background-image: linear-gradient(to bottom,#e10707,#970505);
+  background-repeat: repeat-x;
+  border-color: #970505 #970505 #4d0202;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #970505;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.red.active,.fpc-widget-front .fpc-btn-primary.red.disabled,.fpc-widget-front .fpc-btn-primary.red:active,.fpc-widget-front .fpc-btn-primary.red:focus,.fpc-widget-front .fpc-btn-primary.red:hover,.fpc-widget-front .fpc-btn-primary.red[disabled] {
+  color: #fff;
+  background-color: #970505;
+  *background-color: #7e0404
+}
+.fpc-widget-front .fpc-btn-primary.yellow {
+  color: #FFF!important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: #d2961d;
+  background-image: -moz-linear-gradient(top,#e9a825,#b07b12);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#e9a825),to(#b07b12));
+  background-image: -webkit-linear-gradient(top,#e9a825,#b07b12);
+  background-image: -o-linear-gradient(top,#e9a825,#b07b12);
+  background-image: linear-gradient(to bottom,#e9a825,#b07b12);
+  background-repeat: repeat-x;
+  border-color: #b07b12 #b07b12 #6a4b0b;
+  border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+  *background-color: #b07b12;
+  filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.fpc-widget-front .fpc-btn-primary.yellow.active,.fpc-widget-front .fpc-btn-primary.yellow.disabled,.fpc-widget-front .fpc-btn-primary.yellow:active,.fpc-widget-front .fpc-btn-primary.yellow:focus,.fpc-widget-front .fpc-btn-primary.yellow:hover,.fpc-widget-front .fpc-btn-primary.yellow[disabled] {
+  color: #fff;
+  background-color: #b07b12;
+  *background-color: #996b0f
+}
+.edit-link.fpc-btn {
+  margin-top: 0;
+}
+.edit-link.fpc-btn a {
+  color: #000;
+}
+
+.fpc-btn.btn-random-colors {
+  background-image: none;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out
+}
+.fpc-btn.btn-random-colors:focus,.fpc-btn.btn-random-colors:hover {
+  opacity: .75
+}
+/* End buttons */
+
+
+/*
+* Link mask, like round divs
+*/
+.fpc-widget-front .czr-link-mask {
+  position: absolute;
+  border-color: white;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.fpc-widget-front .czr-link-mask::before {
+  position: absolute;
+  width: 63%;
+  /*
+    * this refers to the parent width, allowing us to have a perfect square despite the parent
+    * as it has the same element's width percentage value.
+    */
+  padding-bottom: 63%;
+  content: '';
+  z-index: 1;
+  /* Centering */
+  left: 50%;
+  top: 50%;
+  /* fallback for those browsers w/o translate3d transform property*/
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  /* end of centering */
+
+  border: 150px solid;
+  border-color: inherit;
+  box-sizing: content-box;
+  transition: all .3s ease;
+}
+
+.ie9 .fpc-widget-front .czr-link-mask::before {
+  border-color: transparent !important;
+}
+
+/* SHAPES and Effects */
+.no-effect .fpc-widget-front .czr-link-mask::before {
+  border: transparent;
+}
+
+.fp-rounded-expanded .fpc-widget-front .czr-link-mask::before,
+.rounded .fpc-widget-front .czr-link-mask::before {
+  border-radius: 50%;
+}
+/*
+* For the customizer's live preview only,
+* as the "rounded" class can be kept as default (initial) value
+*/
+[class*=fp-squared] .fp-thumb-wrapper .czr-link-mask::before{
+  border-radius: 0;
+}
+
+.fp-rounded-expanded .fp-thumb-wrapper .czr-link-mask::before,
+.fp-squared-expanded .fp-thumb-wrapper .czr-link-mask::before,
+.czr-link-mask-p.hover .czr-link-mask::before {
+  -webkit-transform: translate(-50%, -50%) scale(1.4);
+  transform: translate(-50%, -50%) scale(1.4);
+  /* fallback for those browsers w/o translate3d transform property*/
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(1.4);
+  transform: translate3d(-50%, -50%, 0) scale(1.4);
+
+  -ms-transform: translate(-50%, -50%) scale(1.4);
+}
+
+
+/* featured pages*/
+.fpc-marketing {
+  margin-top: 0.5em;
+  margin-bottom: 6.25em;
+}
+
+.featured-page {
+  margin-top: 2.5em;
+  position: relative;
+  text-align: center;
+}
+
+.featured-page .fp-thumb-wrapper {
+  /* this actually depends on the thumb size */
+  max-width: 270px;
+  margin: 8px auto;
+}
+
+.featured-page .no-effect .fp-thumb-wrapper {
+  margin-bottom: 2.5em;
+}
+/*
+* Should avoid the visible fine line issue
+*/
+.fpc-marketing .featured-page img {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+.js-center-images-disabled .featured-page img {
+  /* temporary CSS centering */
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* fallback for those browsers w/o translate3d transform property*/
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate(-50%, -50%);
+
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+
+
+.fp-title,
+.fp-button,
+[class*=fp-text-] {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fp-title {
+  line-height: 1.25em;
+  margin-top: .625em;
+  margin-bottom: 1.25em;
+  word-break: break-word;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.44em;
+}
+
+.fp-title::after {
+  content: "";
+  position: absolute;
+  width: 1.25em;
+  background: #202020;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0.3125em auto 0;
+  transition: all 0.6s ease;
+}
+
+.fpc-widget-front.hover .fp-title::after {
+  width: 2.5em;
+}
+
+.featured-page .btn-edit {
+  margin: -1em 0 0;
+}
+
+[class*=fp-text-] {
+  margin: 2.5em auto;
+  color: #777;
+}
+
+.fp-button {
+  display: inline-block;
+  padding: 0;
+}
+
+.fp-button .btn-more {
+  margin-bottom: 1.25em;
+  white-space: normal;
+  word-break: break-word;
+}
+.featured-page .fpc-widget-front.hover {
+  color: #777;
+}
+
+/* responsiveness:
+* font size fix see : https://github.com/presscustomizr/tc-unlimited-featured-pages/issues/115
+* happens when using 4 columns only as of now
+*/
+@media ( max-width: 1199px ) {
+  .featured-page.fpc-col-md-3 .fp-button {
+    font-size: 16px;
+  }
+}
+@media ( max-width: 991px ) and ( min-width: 768px ) {
+  .featured-page.fpc-col-md-3 {
+    font-size: 1em;
+  }
+  .featured-page.fpc-col-md-3 .fp-button {
+    font-size: 13px;
+  }
+}
